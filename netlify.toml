@@ -1,0 +1,32 @@
+# Configuración de Netlify — FUNDALMA
+# Sitio estático puro: no requiere build.
+
+[build]
+  publish = "."
+
+# Redirección de rutas viejas del Wix a las nuevas páginas
+[[redirects]]
+  from = "/institucional"
+  to = "/index.html#institucional"
+  status = 301
+
+[[redirects]]
+  from = "/news"
+  to = "/novedades.html"
+  status = 301
+
+[[redirects]]
+  from = "/contact"
+  to = "/index.html#contacto"
+  status = 301
+
+[[redirects]]
+  from = "/about"
+  to = "/casa-de-maria.html"
+  status = 301
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
