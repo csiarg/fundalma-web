@@ -203,9 +203,27 @@
         <p>📍 Virgen de Luján 3765, Trujui, Moreno</p>
       </div>
     </div>
-    <div style="margin-top:34px">
-      <a class="btn btn-dark" href="https://forms.gle/REEMPLAZAR-CONSULTA" target="_blank" rel="noopener">✉️ Envianos tu consulta</a>
+    <div class="form-consulta" style="text-align:left">
+      <h3 style="margin-bottom:16px">💬 Envianos tu consulta</h3>
+      <div class="campos">
+        <div><label for="c-nombre">Nombre</label><input id="c-nombre" type="text" placeholder="Tu nombre"></div>
+        <div><label for="c-apellido">Apellido</label><input id="c-apellido" type="text" placeholder="Tu apellido"></div>
+      </div>
+      <label for="c-obs">Observaciones</label>
+      <textarea id="c-obs" rows="4" placeholder="Escribí tu consulta…"></textarea>
+      <button class="btn btn-primary" style="border:none;cursor:pointer;width:100%" onclick="enviarConsulta()">📱 Enviar por WhatsApp</button>
+      <p style="font-size:0.8rem;color:var(--gris);margin-top:10px;text-align:center">Se abre WhatsApp con el mensaje listo para enviar a Administración.</p>
     </div>
+    <script>
+    function enviarConsulta(){
+      var n=document.getElementById('c-nombre').value.trim();
+      var a=document.getElementById('c-apellido').value.trim();
+      var o=document.getElementById('c-obs').value.trim();
+      if(!n||!a||!o){alert('Por favor completá nombre, apellido y tu consulta.');return;}
+      var msj='Hola, soy '+n+' '+a+'. Consulta desde la web FUNDALMA: '+o;
+      window.open('https://wa.me/5491137013541?text='+encodeURIComponent(msj),'_blank');
+    }
+    </script>
     <div class="mapa">
       <iframe src="https://www.google.com/maps?q=Virgen+de+Luj%C3%A1n+3770,+Trujui,+Moreno,+Buenos+Aires&output=embed" loading="lazy" title="Mapa FUNDALMA"></iframe>
     </div>
@@ -253,7 +271,7 @@
   </div>
 </footer>
 
-<a class="wsp" href="https://wa.me/5491138775820" target="_blank" rel="noopener" title="WhatsApp">💬</a>
+<a class="wsp" href="https://wa.me/5491137013541" target="_blank" rel="noopener" title="WhatsApp">💬</a>
 
 </body>
 </html>
