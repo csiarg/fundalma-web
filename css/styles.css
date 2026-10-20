@@ -178,7 +178,7 @@ h2.titulo { font-size: clamp(1.6rem, 3.5vw, 2.3rem); margin: 8px 0 14px; }
 
 /* ---------- CTA final ---------- */
 .cta-final {
-  background: linear-gradient(135deg, var(--acento-2), #1f7a70);
+  background: linear-gradient(135deg, var(--bordo-claro), var(--bordo));
   color: var(--blanco); text-align: center; border-radius: var(--radio); padding: 60px 30px;
 }
 .cta-final h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); margin-bottom: 12px; }
